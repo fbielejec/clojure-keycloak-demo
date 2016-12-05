@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+<listener>
+  <listener-class>keycloak_demo.listener</listener-class>
+</listener>
+
+<servlet>
+  <servlet-name>keycloak-demo.core/app servlet</servlet-name>
+  <servlet-class>keycloak_demo.servlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>keycloak-demo.core/app servlet</servlet-name>
+  <url-pattern>/*</url-pattern>
+</servlet-mapping>
+
+<module-name>keycloak-demo</module-name>
+
+
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Protected</web-resource-name>
+    <url-pattern>/protected</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>user</role-name>
+  </auth-constraint>
+</security-constraint>
+
+<login-config>
+  <auth-method>KEYCLOAK</auth-method>
+  <realm-name>4clojure</realm-name>
+</login-config>
+
+<security-role>
+  <role-name>user</role-name>
+</security-role>
+
+</web-app>
+

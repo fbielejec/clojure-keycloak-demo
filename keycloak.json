@@ -1,0 +1,10 @@
+{
+  "realm": "4clojure",
+  "resource": "keycloak-demo",
+  "auth-server-url": "http://localhost:8180/auth",
+     "credentials": {
+    "secret": "dcd07933-d2a5-43ec-971d-39dbf8d0a73e"
+  },
+  "ssl-required": "external",
+  "use-resource-role-mappings": true
+}
