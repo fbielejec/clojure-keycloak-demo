@@ -17,7 +17,7 @@ http://localhost:8080/keycloak-demo/
 KEYCLOAK=org.keycloak.adapters.tomcat.KeycloakAuthenticatorValve  
 * start Tomcat
 
-[//]: # https://blog-ungarida.rhcloud.com/keycloak-tomcat-adapter/
+Thanks to: https://blog-ungarida.rhcloud.com/keycloak-tomcat-adapter/
 
 ## License
 
