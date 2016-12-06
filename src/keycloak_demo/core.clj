@@ -2,17 +2,19 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [immutant.web :as web]
+            [keycloak-demo.views.index :as index]
             [keycloak-demo.views.home :as home]
+            [keycloak-demo.views.protected :as protected]
             )
   (:gen-class))
 
 (defn home-handler
   "Display home route"
   []
-(home/index "Home" (home/home)))
+  (index/index "Home" (home/home)))
 
 (defn get-token
-  "Gets the session for the user"
+  "Get the session token from http request"
   [request]
   (let [{servlet-request :servlet-request} request
         security-context (.getAttribute servlet-request "org.keycloak.KeycloakSecurityContext")
@@ -24,7 +26,8 @@
   [request]
   (try   
     (let [token (get-token request)] 
-      (str "<h1>This route is protected by Keycloak."  "<h1>Token: " token "</h1>"))
+      (index/index "Protected" (protected/protected token))
+      )
     (catch Exception e
       (str "<h1>" e "</h1>"))))
 
