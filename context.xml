@@ -1,4 +1,0 @@
-    <?xml version="1.0" encoding="UTF-8"?>  
-    <Context path="" docBase="ROOT" debug="0" privileged="true">  
-        <Valve className="org.keycloak.adapters.tomcat7.KeycloakAuthenticatorValve" />
-    </Context>  

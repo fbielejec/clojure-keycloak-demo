@@ -7,7 +7,7 @@
                  [compojure "1.4.0"]                                    
                  [org.immutant/web "2.1.5"]
                  [environ "1.1.0"]
-
+                 [hiccup "1.0.4"]
                  ]
   :plugins [
             [lein-uberwar "0.1.0"]
@@ -23,7 +23,9 @@
   :ring {:handler keycloak-demo.core/app}
   :uberwar {:handler keycloak-demo.core/app
             :web-xml "web.xml" 
-            :name "keycloak-demo.war"}
- ; :servlet-resources-path "keycloak.json"
+            :name "keycloak-demo.war"
+
+            }
+  :war-resources-path "war-resources"
 
   )
