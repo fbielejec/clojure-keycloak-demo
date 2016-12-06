@@ -4,8 +4,6 @@
 
 lein uberwar
 
-add keycloak.json to WEB-INF/
-
 cp target/uberjar/keycloak-demo.war ~/Programs/apache-tomcat-8.5.8/webapps
 
 http://localhost:8080/keycloak-demo/
