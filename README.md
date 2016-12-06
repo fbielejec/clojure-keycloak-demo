@@ -1,4 +1,4 @@
-# keycloak-demo
+# clojure-keycloak-demo
 
 ## Usage
 

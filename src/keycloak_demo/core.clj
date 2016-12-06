@@ -2,14 +2,14 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [immutant.web :as web]
-            
+            [keycloak-demo.views.home :as home]
             )
   (:gen-class))
 
-(defn root-handler
-  "Display token information from a http request."
+(defn home-handler
+  "Display home route"
   []
-  (str "<h1>This is an unprotected route. Try the protected/ route to see keycloak authentication in action.</h1>"))
+(home/index "Home" (home/home)))
 
 (defn get-token
   "Gets the session for the user"
@@ -31,7 +31,7 @@
 (defroutes app
   "The router."
   (GET "/" []
-       (root-handler))
+       (home-handler))
   (GET "/protected" [:as request]
        (protected-handler request ))
   (route/not-found
