@@ -6,11 +6,11 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha12"]
                  [compojure "1.4.0"]                                    
                  [org.immutant/web "2.1.5"]
+                 [org.clojure/tools.logging "0.3.1"]
                  [environ "1.1.0"]
                  [hiccup "1.0.4"]
                  ]
-  :plugins [
-            [lein-uberwar "0.1.0"]
+  :plugins [[lein-uberwar "0.1.0"]
             ]
   :target-path "target/%s"
   :profiles {
@@ -24,8 +24,6 @@
   :uberwar {:handler keycloak-demo.core/app
             :web-xml "web.xml" 
             :name "keycloak-demo.war"
-
             }
   :war-resources-path "war-resources"
-
   )
