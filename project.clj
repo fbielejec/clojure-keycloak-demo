@@ -10,10 +10,8 @@
                  [org.clojure/tools.logging "0.3.1"]
                  [environ "1.1.0"]
                  [hiccup "1.0.4"]
-                 [org.keycloak/keycloak-core "1.9.1.Final"]
-                 [org.keycloak/keycloak-common "1.9.1.Final"]
-               ;;  [org.keycloak/keycloak-adapter-core "1.9.1.Final"]
-                 ]
+                 [org.keycloak/keycloak-core "2.4.0.Final"]
+                 [org.keycloak/keycloak-common "2.4.0.Final"]]
   :plugins [[lein-uberwar "0.1.0"]]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}            
