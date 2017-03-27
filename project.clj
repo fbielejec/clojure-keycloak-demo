@@ -9,9 +9,7 @@
                  [com.cemerick/url "0.1.1"]
                  [org.clojure/tools.logging "0.3.1"]
                  [environ "1.1.0"]
-                 [hiccup "1.0.4"]
-                 [org.keycloak/keycloak-core "2.4.0.Final"]
-                 [org.keycloak/keycloak-common "2.4.0.Final"]]
+                 [hiccup "1.0.4"]]
   :plugins [[lein-uberwar "0.1.0"]]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}            
@@ -20,5 +18,4 @@
   :ring {:handler keycloak-demo.core/app}
   :uberwar {:handler keycloak-demo.core/app
             :web-xml "web.xml" 
-            :name "keycloak-demo.war"}
-  :war-resources-path "war-resources")
+            :name "keycloak-demo.war"})

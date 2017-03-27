@@ -14,27 +14,7 @@
   <url-pattern>/*</url-pattern>
 </servlet-mapping>
 
-<module-name>keycloak-demo</module-name>
-
-
-<security-constraint>
-  <web-resource-collection>
-    <web-resource-name>Protected</web-resource-name>
-    <url-pattern>/protected</url-pattern>
-  </web-resource-collection>
-  <auth-constraint>
-    <role-name>user</role-name>
-  </auth-constraint>
-</security-constraint>
-
-<login-config>
-  <auth-method>KEYCLOAK</auth-method>
-  <realm-name>4clojure</realm-name>
-</login-config>
-
-<security-role>
-  <role-name>user</role-name>
-</security-role>
+<module-name>keycloak-demo</module-name> 
 
 </web-app>
 

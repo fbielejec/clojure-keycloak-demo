@@ -13,30 +13,17 @@
   []
   (index/index "Home" (home/home)))
 
-(defn get-token
-  "Get the session token from http request."
-  [request]
-  (let [{servlet-request :servlet-request} request
-        security-context (.getAttribute servlet-request "org.keycloak.KeycloakSecurityContext")
-        id-token (.getIdToken security-context)]
-    id-token))
-
 (defn protected-handler
   "Keycloak protected route."
-  [request]
-  (try   
-    (let [token (get-token request)] 
-      (index/index "Protected" (protected/protected token)))
-    (catch Exception e
-      (log/error e)
-      (str "<h1>" e "</h1>"))))
+  []
+  (index/index "Protected" (protected/protected)))
 
 (defroutes app
   "The router."
   (GET "/" []
        (home-handler))
-  (GET "/protected" [:as request]
-       (protected-handler request ))
+  (GET "/protected" []
+       (protected-handler))
   (route/not-found
    "<h1>Page not found</h1>"))
 
